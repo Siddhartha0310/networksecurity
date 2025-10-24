@@ -6,10 +6,10 @@ import os
 import sys
 import numpy as np
 import pandas as pd
-import pymango
+import pymongo
 from typing import List
 from sklearn.model_selection import train_test_split
-
+from networksecurity.entity.artifact_entity import DataIngestionArtifact
 from dotenv import load_dotenv
 load_dotenv()
 MONGO_USERNAME=os.getenv("MONGO_USERNAME")
@@ -29,13 +29,13 @@ class DataIngestion:
         try:
           database_name=self.data_ingestion_config.database_name
           collection_name=self.data_ingestion_config.collection_name
-          self.mongo_client=pymango.MongoClient(MONGODB_URL)
+          self.mongo_client=pymongo.MongoClient(MONGODB_URL)
           collection=self.mongo_client[database_name][collection_name]
-          pd.DataFrame(list(collection.find()))
+          df=pd.DataFrame(list(collection.find()))
           if "_id" in df.columns:
               df=df.drop(columns=["_id"],axis=1)
           
-          df.replace(to_replace="na",value=np.NAN,inplace=True)
+          df.replace(to_replace="na",value=np.nan,inplace=True)
           return df
         except Exception as e:
             raise CustomException(e, sys)
@@ -73,6 +73,11 @@ class DataIngestion:
           dataframe=self.export_collection_as_dataframe()
           dataframe=self.export_data_into_feature_store(dataframe=dataframe)
           self.split_data_as_train_test(dataframe=dataframe)
+          data_ingestion_artifact=DataIngestionArtifact(
+                trained_file_path=self.data_ingestion_config.training_file_path,
+                test_file_path=self.data_ingestion_config.testing_file_path
+            )
+          return data_ingestion_artifact          
         except Exception as e:
             raise CustomException(e, sys)    
         
