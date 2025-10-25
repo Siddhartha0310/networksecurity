@@ -1,0 +1,8 @@
+[2025-10-24 18:04:07,185] 10: INFO: Starting data ingestion
+[2025-10-24 18:04:21,896] 60: INFO: Performed train test split
+[2025-10-24 18:04:21,972] 67: INFO: Ingested data is splitted into train and test file
+[2025-10-24 18:04:22,026] 33: INFO: Required numer of columns:2
+[2025-10-24 18:04:22,027] 34: INFO: Data frame as columns:31
+[2025-10-24 18:04:22,027] 33: INFO: Required numer of columns:2
+[2025-10-24 18:04:22,027] 34: INFO: Data frame as columns:31
+[2025-10-24 18:04:22,112] 31: INFO: Successfully wrote YAML to: Artifacts\10_24_2025_18_04_01\validated\drift_report\report.yaml

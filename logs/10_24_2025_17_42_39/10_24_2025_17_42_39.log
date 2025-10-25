@@ -1,0 +1,7 @@
+[2025-10-24 17:42:42,604] 10: INFO: Starting data ingestion
+[2025-10-24 17:42:51,755] 60: INFO: Performed train test split
+[2025-10-24 17:42:51,825] 67: INFO: Ingested data is splitted into train and test file
+[2025-10-24 17:42:51,865] 33: INFO: Required numer of columns:2
+[2025-10-24 17:42:51,865] 34: INFO: Data frame as columns:31
+[2025-10-24 17:42:51,865] 33: INFO: Required numer of columns:2
+[2025-10-24 17:42:51,865] 34: INFO: Data frame as columns:31
