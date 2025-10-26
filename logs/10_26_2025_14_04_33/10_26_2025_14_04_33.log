@@ -1,0 +1,10 @@
+[2025-10-26 14:04:40,643] 12: INFO: Starting data ingestion
+[2025-10-26 14:04:48,647] 60: INFO: Performed train test split
+[2025-10-26 14:04:48,766] 67: INFO: Ingested data is splitted into train and test file
+[2025-10-26 14:04:48,811] 33: INFO: Required numer of columns:2
+[2025-10-26 14:04:48,811] 34: INFO: Data frame as columns:31
+[2025-10-26 14:04:48,811] 33: INFO: Required numer of columns:2
+[2025-10-26 14:04:48,811] 34: INFO: Data frame as columns:31
+[2025-10-26 14:04:48,877] 34: INFO: Successfully wrote YAML to: Artifacts\10_26_2025_14_04_34\validated\drift_report\report.yaml
+[2025-10-26 14:04:48,983] 42: INFO: Intiate data transformation method of data transformation class
+[2025-10-26 14:04:49,012] 33: INFO: replacing missing values using Knn Imputer
